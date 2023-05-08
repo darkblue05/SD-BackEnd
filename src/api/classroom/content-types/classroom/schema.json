@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "classrooms",
+  "info": {
+    "singularName": "classroom",
+    "pluralName": "classrooms",
+    "displayName": "classroom"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "ANUAL",
+        "SEMESTRAL",
+        "CUATRIMESTRAL",
+        "TRIMESTRAL",
+        "BIMESTRAL"
+      ],
+      "required": true
+    },
+    "school": {
+      "type": "string",
+      "required": true
+    },
+    "schoolKey": {
+      "type": "string"
+    },
+    "level": {
+      "type": "integer"
+    },
+    "state": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "classroomCode": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}
