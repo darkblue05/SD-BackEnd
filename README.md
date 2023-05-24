@@ -1,57 +1,80 @@
-# 🚀 Getting started with Strapi
+## Node Sequelize API
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
+This is the api for the Rivers State app.
 
-### `develop`
+# Technologies
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
+1. Nodejs
+2. MySQL
+3. Express
+4. Sequelize
 
-```
-npm run develop
-# or
-yarn develop
-```
+# Setup
 
-### `start`
+**Install all dependencies**
+<br>
+`    npm install
+   `
+<br>
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
+<!-- blank line -->
 
-```
-npm run start
-# or
-yarn start
-```
+**Create a new .env file**
 
-### `build`
+<!-- blank line -->
 
-Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
+Set your node env variable (development, testing or production) in the .env\
+ `        NODE_ENV=development
+   `
 
-```
-npm run build
-# or
-yarn build
-```
+<!-- blank line -->
 
-## ⚙️ Deployment
+**Set your database config for your development environment in the config.js file**\
+ `        The Path to config file = ./src/config/db/config.js
+   `
 
-Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
+<!-- blank line -->
 
-## 📚 Learn more
+**Update the db config in the development object to connect to your local db**\
+ `        "username": "Database User"
+   `\
+ `        "password": "Database Password if any"
+   `\
+ `        "database": "Database Name"
+   `\
+ `        "host": "Database Local Host
+   `
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://docs.strapi.io) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+<!-- blank line -->
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+**Setup MySQL database by configuring the .env file**\
+ `        DB=Database Name
+   `\
+ `        DB_USER=Database User
+   `\
+ `        DB_PASSWORD=Database Password if Any
+   `\
+ `        DB_PORT=3306
+   `\
+ `        DB_HOST=127.0.0.1
+   `\
+ `        PORT=Set Port for API to run on
+   `
 
-## ✨ Community
+<!-- blank line -->
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+**Run migrations using sequelize**\
+ `        npx sequelize-cli db:migrate
+   `
 
----
+<!-- blank line -->
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+**Run seeder to add default admin**\
+ `        npx sequelize-cli db:seed:all
+   `
+
+# Testing
+
+To run test\
+ `        npm run test
+   `

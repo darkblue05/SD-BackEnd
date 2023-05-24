@@ -41,4 +41,22 @@ router.post("/student/:id", createStudent);
 router.put("/student/:id", updateStudent);
 router.delete("/student/:id", deleteStudent);
 
+const {
+  getAllStudentClass,
+  createStudentClass,
+  deleteStudentClass,
+} = require("./controllers/StudentClass.controller");
+
+router.get("/student-class/:id", getAllStudentClass);
+router.post("/student-class/:id", createStudentClass);
+router.delete("/student-class/:id", deleteStudentClass);
+
+const {
+  getAllAttendanceClass,
+  createAttendanceClass,
+} = require("./controllers/AttendanceClass.controller");
+
+router.get("/student-class/:id", getAllAttendanceClass);
+router.post("/student-class/:id", createAttendanceClass);
+
 module.exports = router;
